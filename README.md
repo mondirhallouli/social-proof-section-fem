@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution code](https://github.com/mondirhallouli/social-proof-section-fem)
+- Live Site URL: [live site](https://social-proof-section-fem.pages.dev/)
 
 ## My process
 
