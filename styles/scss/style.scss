@@ -1,0 +1,180 @@
+@use "modules/utils" as u;
+@use "modules/breakpoints" as b;
+@forward "modules/typography";
+@forward "modules/colors";
+@forward "modules/base";
+
+// ===[ HEADER SECTION ]=== //
+.header {
+    width: 100%;
+    margin-bottom: u.rem(50);
+
+    @include b.breakpoint("large") {
+        margin-bottom: u.rem(70);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: u.rem(40);
+    }
+
+    &-text {
+        margin-bottom: u.rem(50);
+
+        @include b.breakpoint("large") {
+            max-width: u.rem(420);
+            margin-bottom: 0;
+        }
+    }
+
+    &-title {
+        font-size: u.rem(38);
+        font-weight: var(--bold-weight);
+        text-align: center;
+        color: var(--dark-magenta);
+        margin-bottom: u.rem(24);
+
+        @include b.breakpoint("large") {
+            font-size: u.rem(50);
+            text-align: left;
+        }
+    }
+
+    &-description {
+        font-size: u.rem(18);
+        line-height: 1.3;
+        text-align: center;
+        color: var(--grayish-magenta);
+
+        @include b.breakpoint("large") {
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+
+    &-rates {
+        @include b.breakpoint("large") {
+            width: u.rem(540);
+            display: flex;
+            flex-direction: column;
+            gap: u.rem(16);
+        }
+
+        &_review {
+            padding: u.rem(16);
+            margin-bottom: u.rem(16);
+            border-radius: u.rem(8);
+            background-color: var(--light-magenta);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            @include b.breakpoint("large") {
+                width: u.rem(445);
+                flex-direction: row;
+                justify-content: start;
+                gap: u.rem(32);
+                align-items: center;
+                margin-bottom: 0;
+                padding: u.rem(20) u.rem(30);
+
+                &:nth-child(2) {
+                    align-self: center;
+                }
+
+                &:last-child {
+                    align-self: end;
+                }
+            }
+
+            .stars {
+                display: flex;
+                gap: u.rem(5);
+            }
+
+            .text {
+                margin: u.rem(16) 0 0;
+                font-size: u.rem(16);
+                font-weight: var(--bold-weight);
+                color: var(--dark-magenta);
+
+                @include b.breakpoint("large") {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+// ===[ REVIEWS SECTION ]=== //
+.reviews {
+    margin-bottom: u.rem(40);
+
+    @include b.breakpoint("large") {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: u.rem(268);
+        gap: u.rem(32);
+    }
+
+    &-card {
+        padding: u.rem(40) u.rem(30);
+        background-color: var(--dark-magenta);
+        border-radius: u.rem(10);
+        margin-bottom: u.rem(16);
+
+        @include b.breakpoint("large") {
+            height: u.rem(236);
+            margin-bottom: 0;
+        }
+
+        &:nth-child(2) {
+            align-self: center;
+        }
+
+        &:last-child {
+            align-self: end;
+        }
+
+        &_header {
+            display: flex;
+            align-items: center;
+            gap: u.rem(22);
+        }
+
+        &_header-img {
+            width: u.rem(42);
+            height: u.rem(42);
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &_header-id {
+            .name {
+                margin: 0;
+                font-size: u.rem(16);
+                font-weight: var(--bold-weight);
+                line-height: 1.4;
+                color: var(--white);
+            }
+
+            .sub {
+                margin: 0;
+                font-size: u.rem(16);
+                color: var(--soft-pink);
+            }
+        }
+
+        &_body {
+            margin-bottom: 0;
+            color: var(--white);
+            line-height: 1.375;
+        }
+    }
+}

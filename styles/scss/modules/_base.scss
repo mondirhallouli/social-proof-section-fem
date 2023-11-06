@@ -1,0 +1,19 @@
+@use 'utils' as u;
+@use 'breakpoints' as b;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.main-container {
+    padding: u.rem(80) u.rem(24);
+    margin: 0 auto;
+    font-family: var(--main-font);
+
+    @include b.breakpoint("large") {
+        max-width: u.rem(1110);
+        margin-inline: auto;
+    }
+}
